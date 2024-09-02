@@ -3,6 +3,14 @@ import { useNavigate } from "react-router-dom";
 
 function Box({ id, title, content, img, date }) {
   const navigate = useNavigate();
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    return `${year}년 ${month}월 ${day}일`;
+  };
 
   return (
     <PostBox
@@ -13,17 +21,20 @@ function Box({ id, title, content, img, date }) {
       <PostImg src={img} alt={title} />
       <PostSum>
         <Title>{title}</Title>
-        <Date>{date}</Date>
+        <DateSection>{formatDate(date)}</DateSection>
       </PostSum>
     </PostBox>
   );
 }
-const Date = styled.div``;
+const DateSection = styled.div`
+  font-size: 14px;
+`;
 const PostSum = styled.div`
   margin: 10px;
   height: 50%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 `;
 const Title = styled.div`
   font-weight: 800;

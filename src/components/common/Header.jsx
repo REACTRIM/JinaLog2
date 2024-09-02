@@ -51,7 +51,13 @@ function Header() {
       </Logo>
       <Etc>
         <EtcImg src={alert} alt="알림" />
-        <EtcImg src={find} alt="검색" />
+        <EtcImg
+          src={find}
+          alt="검색"
+          onClick={() => {
+            navigate("./search");
+          }}
+        />
         <Button
           onClick={() => {
             navigate("./writePost");

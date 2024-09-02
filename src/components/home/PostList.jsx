@@ -32,7 +32,7 @@ function PostList() {
           title={post.title}
           content={post.content}
           img={img2}
-          date={post.date}
+          date={post.createdAt}
         />
       ))}
     </PostBoxList>

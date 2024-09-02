@@ -47,7 +47,7 @@ function Post() {
         <PostTitle title={post.title} name={post.name} date={post.createdAt} />
         <PostContent img={post.img} content={post.content} />
         <Profile />
-        <CommentList />
+        <CommentList postId={postId} />
       </PostPage>
     </>
   );
@@ -55,6 +55,6 @@ function Post() {
 const PostPage = styled.div`
   width: 750px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 50px;
 `;
 export default Post;
